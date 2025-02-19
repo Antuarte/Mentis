@@ -18,6 +18,105 @@ input, textarea, select, button {
   font-size: 1em;
 }
 
+/* Tela Inicial */
+.tela-inicial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+}
+
+.tela-inicial h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.tela-inicial input {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #495464;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.tela-inicial button {
+  background-color: #64B6AC;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.tela-inicial button:hover {
+  background-color: #558b8a;
+}
+
+/* Aba Lateral */
+.aba-lateral {
+  width: 200px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  height: 100%;
+  padding-top: 20px;
+  padding: 20px;
+}
+
+.aba-lateral ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.aba-lateral li {
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.aba-lateral li:hover {
+  background-color: #64B6AC;
+}
+
+/* Conteúdo Principal */
+.conteudo-principal {
+  margin-left: 220px;
+  padding: 20px;
+  flex: 1;
+}
+
+/* Menu Hamburguer */
+.menu-toggle {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 24px;
+}
+
+.aba-lateral {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  height: 100%;
+  left: -250px;
+  transition: 0.3s;
+  z-index: 999;
+  padding-top: 60px;
+}
+
+.aba-lateral.active {
+  left: 0;
+}
+
 /* ESTILOS HABITOS */
 .habitos {
   background-color: #BDD5EA;
@@ -93,16 +192,24 @@ button:hover {
 
 /* ESTILOS OSCILAÇÕES DE HUMOR */
 .humor {
-  background-color: #BDD5EA;
+  background-color: #F9F5EB;
   padding: 20px;
   border-radius: 10px;
-  margin: 20px;
+  margin: 20px 0;
 }
 
-.humor select {
-  padding: 8px;
-  border: 1px solid #495464;
-  border-radius: 5px;
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#calendario-humor {
+  background: white;
+  padding: 15px;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* ESTILOS MEDICAÇÕES */
@@ -150,3 +257,110 @@ button:hover {
   border: 1px solid #495464;
   border-radius: 5px;
 }
+
+/* ESTILOS DASHBOARD DE HUMOR */
+.dashboard-humor {
+  background-color: #E8F0FE;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.dashboard-humor ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dashboard-humor li {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Cores e emojis para humores */
+.humor-item {
+  padding: 8px;
+  margin: 5px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Exemplo de cores para humores específicos */
+[data-humor="Alegria"] { background-color: #FFF700; }
+[data-humor="Felicidade"] { background-color: #FFD700; }
+[data-humor="Euforia"] { background-color: #FF4500; }
+[data-humor="Exultação"] { background-color: #FFB300; }
+[data-humor="Otimismo"] { background-color: #87CEEB; }
+[data-humor="Entusiasmo"] { background-color: #FF8C00; }
+[data-humor="Satisfação"] { background-color: #98FB98; }
+[data-humor="Gratidão"] { background-color: #FFB6C1; }
+[data-humor="Amor"] { background-color: #8B0000; }
+[data-humor="Carinho"] { background-color: #FFDAB9; }
+[data-humor="Admiração"] { background-color: #9370DB; }
+[data-humor="Confiança"] { background-color: #000080; }
+[data-humor="Esperança"] { background-color: #66CDAA; }
+[data-humor="Serenidade"] { background-color: #B0E0E6; }
+[data-humor="Calma"] { background-color: #40E0D0; }
+[data-humor="Tranquilidade"] { background-color: #C0C0C0; }
+
+[data-humor="Tristeza"] { background-color: #708090; }
+[data-humor="Melancolia"] { background-color: #778899; }
+[data-humor="Depressão"] { background-color: #2F4F4F; }
+[data-humor="Angústia"] { background-color: #800080; }
+[data-humor="Desespero"] { background-color: #660000; }
+[data-humor="Frustração"] { background-color: #FF6347; }
+[data-humor="Raiva"] { background-color: #FF0000; }
+[data-humor="Cólera"] { background-color: #FF2400; }
+[data-humor="Irritabilidade"] { background-color: #FF8C69; }
+[data-humor="Indignação"] { background-color: #9932CC; }
+[data-humor="Aversão"] { background-color: #556B2F; }
+[data-humor="Desânimo"] { background-color: #A9A9A9; }
+[data-humor="Solidão"] { background-color: #B0C4DE; }
+[data-humor="Culpa"] { background-color: #8B4513; }
+[data-humor="Vergonha"] { background-color: #FF91A4; }
+[data-humor="Humilhação"] { background-color: #4B0082; }
+[data-humor="Ressentimento"] { background-color: #006400; }
+[data-humor="Ciúmes"] { background-color: #228B22; }
+[data-humor="Inveja"] { background-color: #9ACD32; }
+[data-humor="Arrependimento"] { background-color: #4682B4; }
+
+[data-humor="Surpresa"] { background-color: #FF00FF; }
+[data-humor="Espanto"] { background-color: #00BFFF; }
+[data-humor="Assombro"] { background-color: #D3D3D3; }
+[data-humor="Curiosidade"] { background-color: #FFA07A; }
+[data-humor="Alerta"] { background-color: #FFFF00; }
+
+[data-humor="Ansiedade"] { background-color: #D8BFD8; }
+[data-humor="Nervosismo"] { background-color: #FF69B4; }
+[data-humor="Medo"] { background-color: #ADD8E6; }
+[data-humor="Pânico"] { background-color: #B22222; }
+[data-humor="Insegurança"] { background-color: #696969; }
+[data-humor="Preocupação"] { background-color: #CD853F; }
+[data-humor="Desconfiança"] { background-color: #6B8E23; }
+
+[data-humor="Deprimido"] { background-color: #191970; }
+[data-humor="Melancólico"] { background-color: #5F9EA0; }
+[data-humor="Angustiado"] { background-color: #9400D3; }
+[data-humor="Desconsolado"] { background-color: #808080; }
+[data-humor="Excitado"] { background-color: #FF7F50; }
+[data-humor="Eufórico"] { background-color: #F4C430; }
+[data-humor="Maníaco"] { background-color: #8A2BE2; }
+[data-humor="Culpado"] { background-color: #8B4513; }
+[data-humor="Frustrado"] { background-color: #CD5C5C; }
+[data-humor="Nostálgico"] { background-color: #BA55D3; }
+[data-humor="Contente"] { background-color: #FAFAD2; }
+[data-humor="Energizado"] { background-color: #ADFF2F; }
+[data-humor="Motivado"] { background-color: #1E90FF; }
+[data-humor="Inspirado"] { background-color: #DA70D6; }
+[data-humor="Aliviado"] { background-color: #90EE90; }
+[data-humor="Orgulhoso"] { background-color: #DAA520; }
+[data-humor="Reconfortado"] { background-color: #FFC0CB; }
+[data-humor="Desolado"] { background-color: #36454F; }
+[data-humor="Atordoado"] { background-color: #6E7B8B; }
+[data-humor="Estressado"] { background-color: #FF7256; }
+[data-humor="Apático"] { background-color: #F5F5DC; }
+[data-humor="Tediado"] { background-color: #BEBEBE; }
+[data-humor="Sarcástico"] { background-color: #E6E6FA; }
+[data-humor="Irônico"] { background-color: #AFEEEE; }
+[data-humor="Bem-humorado"] { background-color: #7FFFD4; }
+[data-humor="Divertido"] { background-color: #FFFFE0; }
+[data-humor="Brincalhão"] { background-color: #FFB347; }
