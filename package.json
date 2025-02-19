@@ -1,0 +1,28 @@
+{
+  "name": "equilibrio_mentis",
+  "version": "1.0.0",
+  "description": "Aplicação web para monitoramento de hábitos, rotina e saúde, com funcionalidades de planejamento de dieta, treinos, diário, humor, medicações e mais. Desenvolvido com React, Firebase e TailwindCSS.",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antuarte/Mentis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Antuarte/Mentis/issues"
+  },
+  "homepage": "https://github.com/Antuarte/Mentis#readme",
+  "devDependencies": {
+    "electron": "^34.2.0"
+  },
+  "dependencies": {
+    "firebase": "^11.3.1"
+  }
+}
