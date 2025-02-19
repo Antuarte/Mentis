@@ -1,0 +1,76 @@
+<!-- PÁGINA INICIAL -->
+
+<!-- Rastreamento de Hábitos -->
+<div class="habitos">
+    <h2>Meus Hábitos</h2>
+    <input type="text" id="novo-habito" placeholder="Adicionar hábito">
+    <button onclick="adicionarHabito()">+</button>
+    <ul id="lista-habitos"></ul>
+  </div>
+
+  <!-- Rotina de Dieta -->
+  <div class="dieta">
+    <h2>Planejamento de Dieta</h2>
+    <input type="text" id="refeicao" placeholder="Refeição (ex: Café da Manhã)">
+    <input type="text" id="alimento" placeholder="Alimento">
+    <input type="number" id="calorias" placeholder="Calorias">
+    <button onclick="adicionarRefeicao()">Adicionar</button>
+    <ul id="lista-refeicoes"></ul>
+  </div>
+
+  <!-- TREINO -->
+  <div class="treino">
+    <h2>Planejamento de Treino</h2>
+    <input type="text" id="exercicio" placeholder="Exercício">
+    <input type="number" id="series" placeholder="Séries">
+    <input type="number" id="repeticoes" placeholder="Repetições">
+    <button onclick="adicionarExercicio()">Adicionar</button>
+    <ul id="lista-exercicios"></ul>
+  </div>
+
+  <!-- DIÁRIO -->
+  <div class="diario">
+    <h2>Diário</h2>
+    <textarea id="entrada-diario" placeholder="Como foi seu dia?"></textarea>
+    <button onclick="salvarDiario()">Salvar</button>
+    <ul id="lista-diario"></ul>
+  </div>
+
+  <!-- OSCILAÇÕES DE HUMOR -->
+  <div class="humor">
+    <h2>Registro de Humor</h2>
+    <select id="humor-selecionado">
+      <option value="Feliz">😊 Feliz</option>
+      <option value="Neutro">😐 Neutro</option>
+      <option value="Triste">😢 Triste</option>
+    </select>
+    <button onclick="registrarHumor()">Registrar</button>
+    <canvas id="grafico-humor"></canvas>
+  </div>
+
+  <!-- MEDICAÇÕES -->
+  <div class="medicacoes">
+    <h2>Registro de Medicações</h2>
+    <input type="text" id="medicamento" placeholder="Medicamento">
+    <input type="time" id="horario">
+    <button onclick="adicionarMedicamento()">Adicionar</button>
+    <ul id="lista-medicacoes"></ul>
+  </div>
+
+  <!-- TAREFAS PESSOAIS -->
+  <div class="tarefas">
+    <h2>Check-list de Tarefas</h2>
+    <input type="text" id="nova-tarefa" placeholder="Nova tarefa">
+    <button onclick="adicionarTarefa()">Adicionar</button>
+    <ul id="lista-tarefas"></ul>
+  </div>
+
+  <!-- RECEITAS -->
+  <div class="receitas">
+    <h2>Receitas</h2>
+    <input type="text" id="nome-receita" placeholder="Nome da Receita">
+    <textarea id="ingredientes" placeholder="Ingredientes"></textarea>
+    <textarea id="modo-preparo" placeholder="Modo de Preparo"></textarea>
+    <button onclick="adicionarReceita()">Adicionar</button>
+    <ul id="lista-receitas"></ul>
+  </div>

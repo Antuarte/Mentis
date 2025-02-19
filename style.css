@@ -1,0 +1,128 @@
+/* ESTILOS GLOBAIS */
+
+/* ESTILOS HABITOS */
+.habitos {
+    background-color: #BDD5EA;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    border: 1px solid #495464;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: #64B6AC;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+
+  /* ESTILOS DIETA */
+  .dieta {
+    background-color: #BDD5EA;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .dieta input {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #495464;
+    border-radius: 5px;
+  }
+
+  /* ESTILOS TREINO */
+  .treino {
+    background-color: #BDD5EA;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .treino input {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #495464;
+    border-radius: 5px;
+  }
+
+  /* ESTILOS DIÁRIO */
+  .diario {
+    background-color: #BDD5EA;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .diario textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    border: 1px solid #495464;
+    border-radius: 5px;
+  }
+
+  /* ESTILOS OSCILAÇÕES DE HUMOR */
+  .humor {
+    background-color: #BDD5EA;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .humor select {
+    padding: 8px;
+    border: 1px solid #495464;
+    border-radius: 5px;
+  }
+
+  /* ESTILOS MEDICAÇÕES */
+  .medicacoes {
+    background-color: #BDD5EA;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .medicacoes input {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #495464;
+    border-radius: 5px;
+  }
+
+  /* ESTILOS TAREFAS PESSOAIS */
+  .tarefas {
+    background-color: #BDD5EA;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .tarefas input {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #495464;
+    border-radius: 5px;
+  }
+
+  /* ESTILOS RECEITAS */
+  .receitas {
+    background-color: #BDD5EA;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .receitas textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    border: 1px solid #495464;
+    border-radius: 5px;
+  }
