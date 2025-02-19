@@ -27,4 +27,4 @@ Uma aplicação web para rastreamento de hábitos, planejamento de dieta, treino
 
 ### 1️⃣ Clone o repositório:
 ```sh
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/Antuarte/Mentis.git
