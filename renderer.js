@@ -39,18 +39,15 @@ function navegarPara(pagina) {
 
 // Funções para mostrar as seções de Configurações, Perfil e Sobre Nós
 function mostrarConfiguracoes() {
-    esconderTodasSecoes();
-    document.getElementById('configuracoes').style.display = 'block';
+  navegarPara('configuracoes');
 }
 
 function mostrarPerfil() {
-    esconderTodasSecoes();
-    document.getElementById('perfil').style.display = 'block';
+  navegarPara('perfil');
 }
 
 function mostrarSobreNos() {
-    esconderTodasSecoes();
-    document.getElementById('sobre-nos').style.display = 'block';
+  navegarPara('sobre');
 }
 
 function esconderTodasSecoes() {
@@ -61,12 +58,26 @@ function esconderTodasSecoes() {
 
 // Função para salvar as configurações
 function salvarConfiguracoes() {
-    const apelidoApp = document.getElementById('apelido-app').value;
-    const modoTema = document.getElementById('modo-tema').value;
-    localStorage.setItem('apelidoApp', apelidoApp);
-    localStorage.setItem('modoTema', modoTema);
-    alert('Configurações salvas!');
+  const apelidoApp = document.getElementById('apelido-app').value;
+  const modoTema = document.getElementById('modo-tema').value;
+
+  // Salva no localStorage
+  localStorage.setItem('apelidoApp', apelidoApp);
+  localStorage.setItem('modoTema', modoTema);
+
+  // Alterna a classe do body para o modo escuro/claro
+  document.body.classList.toggle('dark-theme', modoTema === 'escuro');
+
+  alert('Configurações salvas!');
 }
+
+// Ao carregar a página, aplicar o tema salvo
+document.addEventListener('DOMContentLoaded', () => {
+  const modoTemaSalvo = localStorage.getItem('modoTema');
+  if (modoTemaSalvo) {
+      document.body.classList.toggle('dark-theme', modoTemaSalvo === 'escuro');
+  }
+});
 
 // Função para salvar o perfil
 function salvarPerfil() {

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equilibrio Mentis</title>
     <link rel="stylesheet" href="style.css">
-
     <!-- FullCalendar -->
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
 </head>
@@ -13,76 +12,25 @@
     <!-- Tela Inicial -->
     <div id="tela-inicial" class="tela-inicial">
         <h1>Seja Bem Vindo <span id="nome-usuario"></span></h1>
-        <!-- No perfil, altere o input para: -->
-        <input type="text" id="nome-usuario-perfil" placeholder="Digite seu nome de usuário">
+        <input type="text" id="input-nome-usuario" placeholder="Digite seu nome">
         <button onclick="salvarNomeUsuario()">Entrar</button>
     </div>
 
-    <!-- Página Principal -->
-    // Estrutura HTML modificada:
-<div id="pagina-principal" class="pagina">
-  <!-- Conteúdo principal aqui -->
-</div>
+    <!-- Menu e Aba Lateral -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="aba-lateral">
+        <ul>
+            <li onclick="navegarPara('principal')">Página Principal</li>
+            <li onclick="navegarPara('configuracoes')">Configurações</li>
+            <li onclick="navegarPara('perfil')">Perfil</li>
+            <li onclick="navegarPara('sobre')">Sobre nós</li>
+        </ul>
+    </div>
 
-<div id="pagina-configuracoes" class="pagina" style="display: none;">
-  <!-- Conteúdo de configurações -->
-</div>
-
-<div id="pagina-perfil" class="pagina" style="display: none;">
-  <!-- Conteúdo do perfil -->
-</div>
-
-<div id="pagina-sobre" class="pagina" style="display: none;">
-  <!-- Conteúdo sobre nós -->
-</div>
-        <!-- Aba Lateral -->
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <div class="aba-lateral">
-            <ul>
-              <li onclick="navegarPara('principal')">Página Principal</li>
-              <li onclick="navegarPara('configuracoes')">Configurações</li>
-              <li onclick="navegarPara('perfil')">Perfil</li>
-              <li onclick="navegarPara('sobre')">Sobre nós</li>
-            </ul>
-          </div>
-
+    <!-- Páginas -->
+    <div id="pagina-principal" class="pagina">
         <!-- Conteúdo Principal -->
         <div class="conteudo-principal">
-            <!-- Seções de Configurações, Perfil e Sobre Nós -->
-            <div id="configuracoes" class="secao" style="display: none;">
-                <h2>Configurações</h2>
-                <label for="apelido-app">Apelido do App:</label>
-                <input type="text" id="apelido-app" placeholder="Digite o apelido do app">
-                <label for="modo-tema">Modo Tema:</label>
-                <select id="modo-tema">
-                    <option value="claro">Claro</option>
-                    <option value="escuro">Escuro</option>
-                </select>
-                <button onclick="salvarConfiguracoes()">Salvar Configurações</button>
-            </div>
-
-            <div id="perfil" class="secao" style="display: none;">
-                <h2>Perfil</h2>
-                <label for="nome-completo">Nome Completo:</label>
-                <input type="text" id="nome-completo" placeholder="Digite seu nome completo">
-                <label for="apelido">Apelido:</label>
-                <input type="text" id="apelido" placeholder="Digite seu apelido">
-                <label for="nome-usuario">Nome de Usuário:</label>
-                <input type="text" id="nome-usuario" placeholder="Digite seu nome de usuário">
-                <label for="idade">Idade:</label>
-                <input type="number" id="idade" placeholder="Digite sua idade">
-                <label for="peso">Peso:</label>
-                <input type="number" id="peso" placeholder="Digite seu peso">
-                <label for="altura">Altura:</label>
-                <input type="number" id="altura" placeholder="Digite sua altura">
-                <button onclick="salvarPerfil()">Salvar Perfil</button>
-            </div>
-
-            <div id="sobre-nos" class="secao" style="display: none;">
-                <h2>Sobre Nós</h2>
-                <p>Texto do README...</p>
-            </div>
-
             <!-- Calendário -->
             <div id="calendario-humor"></div>
 
@@ -90,90 +38,7 @@
             <div class="humor">
                 <h2>Registro de Humor</h2>
                 <select id="humor-selecionado">
-                    <!-- Emoções Positivas -->
-                    <option value="Alegria">Alegria</option>
-                    <option value="Felicidade">Felicidade</option>
-                    <option value="Euforia">Euforia</option>
-                    <option value="Exultação">Exultação</option>
-                    <option value="Otimismo">Otimismo</option>
-                    <option value="Entusiasmo">Entusiasmo</option>
-                    <option value="Satisfação">Satisfação</option>
-                    <option value="Gratidão">Gratidão</option>
-                    <option value="Amor">Amor</option>
-                    <option value="Carinho">Carinho</option>
-                    <option value="Admiração">Admiração</option>
-                    <option value="Confiança">Confiança</option>
-                    <option value="Esperança">Esperança</option>
-                    <option value="Serenidade">Serenidade</option>
-                    <option value="Calma">Calma</option>
-                    <option value="Tranquilidade">Tranquilidade</option>
-
-                    <!-- Emoções Negativas -->
-                    <option value="Tristeza">Tristeza</option>
-                    <option value="Melancolia">Melancolia</option>
-                    <option value="Depressão">Depressão</option>
-                    <option value="Angústia">Angústia</option>
-                    <option value="Desespero">Desespero</option>
-                    <option value="Frustração">Frustração</option>
-                    <option value="Raiva">Raiva</option>
-                    <option value="Cólera">Cólera</option>
-                    <option value="Irritabilidade">Irritabilidade</option>
-                    <option value="Indignação">Indignação</option>
-                    <option value="Aversão">Aversão</option>
-                    <option value="Desânimo">Desânimo</option>
-                    <option value="Solidão">Solidão</option>
-                    <option value="Culpa">Culpa</option>
-                    <option value="Vergonha">Vergonha</option>
-                    <option value="Humilhação">Humilhação</option>
-                    <option value="Ressentimento">Ressentimento</option>
-                    <option value="Ciúmes">Ciúmes</option>
-                    <option value="Inveja">Inveja</option>
-                    <option value="Arrependimento">Arrependimento</option>
-
-                    <!-- Emoções e Sentimentos de Alerta e Surpresa -->
-                    <option value="Surpresa">Surpresa</option>
-                    <option value="Espanto">Espanto</option>
-                    <option value="Assombro">Assombro</option>
-                    <option value="Curiosidade">Curiosidade</option>
-                    <option value="Alerta">Alerta</option>
-
-                    <!-- Estados Relacionados à Ansiedade e Medo -->
-                    <option value="Ansiedade">Ansiedade</option>
-                    <option value="Nervosismo">Nervosismo</option>
-                    <option value="Medo">Medo</option>
-                    <option value="Pânico">Pânico</option>
-                    <option value="Insegurança">Insegurança</option>
-                    <option value="Preocupação">Preocupação</option>
-                    <option value="Desconfiança">Desconfiança</option>
-
-                    <!-- Estados de Humor (Adjetivos e Tonalidades) -->
-                    <option value="Deprimido">Deprimido</option>
-                    <option value="Melancólico">Melancólico</option>
-                    <option value="Angustiado">Angustiado</option>
-                    <option value="Desconsolado">Desconsolado</option>
-                    <option value="Excitado">Excitado</option>
-                    <option value="Eufórico">Eufórico</option>
-                    <option value="Maníaco">Maníaco</option>
-                    <option value="Culpado">Culpado</option>
-                    <option value="Frustrado">Frustrado</option>
-                    <option value="Nostálgico">Nostálgico</option>
-                    <option value="Contente">Contente</option>
-                    <option value="Energizado">Energizado</option>
-                    <option value="Motivado">Motivado</option>
-                    <option value="Inspirado">Inspirado</option>
-                    <option value="Aliviado">Aliviado</option>
-                    <option value="Orgulhoso">Orgulhoso</option>
-                    <option value="Reconfortado">Reconfortado</option>
-                    <option value="Desolado">Desolado</option>
-                    <option value="Atordoado">Atordoado</option>
-                    <option value="Estressado">Estressado</option>
-                    <option value="Apático">Apático</option>
-                    <option value="Tediado">Tediado</option>
-                    <option value="Sarcástico">Sarcástico</option>
-                    <option value="Irônico">Irônico</option>
-                    <option value="Bem-humorado">Bem-humorado</option>
-                    <option value="Divertido">Divertido</option>
-                    <option value="Brincalhão">Brincalhão</option>
+                    <!-- Opções de humor aqui -->
                 </select>
                 <button onclick="registrarHumor()">Registrar</button>
                 <div class="dashboard-container">
@@ -252,13 +117,84 @@
         </div>
     </div>
 
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Páginas Adicionais -->
+    <div id="pagina-configuracoes" class="pagina" style="display: none;">
+        <div class="conteudo-principal">
+            <h2>Configurações</h2>
+            <label for="apelido-app">Apelido do App:</label>
+            <input type="text" id="apelido-app" placeholder="Digite o apelido do app">
+            <label for="modo-tema">Modo Tema:</label>
+            <select id="modo-tema">
+                <option value="claro">Claro</option>
+                <option value="escuro">Escuro</option>
+            </select>
+            <button onclick="salvarConfiguracoes()">Salvar Configurações</button>
+        </div>
+    </div>
 
-    <!-- FullCalendar -->
+    <div id="pagina-perfil" class="pagina" style="display: none;">
+        <div class="conteudo-principal">
+            <h2>Perfil</h2>
+            <label for="nome-completo">Nome Completo:</label>
+            <input type="text" id="nome-completo" placeholder="Digite seu nome completo">
+            <label for="apelido">Apelido:</label>
+            <input type="text" id="apelido" placeholder="Digite seu apelido">
+            <label for="nome-usuario-perfil">Nome de Usuário:</label>
+            <input type="text" id="nome-usuario-perfil" placeholder="Digite seu nome de usuário">
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" placeholder="Digite sua idade">
+            <label for="peso">Peso:</label>
+            <input type="number" id="peso" placeholder="Digite seu peso">
+            <label for="altura">Altura:</label>
+            <input type="number" id="altura" placeholder="Digite sua altura">
+            <button onclick="salvarPerfil()">Salvar Perfil</button>
+        </div>
+    </div>
+
+    <div id="pagina-sobre" class="pagina" style="display: none;">
+        <div class="conteudo-principal">
+            <h2>Sobre Nós</h2>
+<p style="margin: 1;"># Mentis</p>
+<p style="margin: 0;">Aplicação web para monitoramento de hábitos, rotina e saúde, com funcionalidades de planejamento de dieta, treinos, diário, humor, medicações e mais. Desenvolvido com React, Firebase e TailwindCSS.</p>
+
+<p style="margin: 2;">## 🚀 Sobre o Projeto</p>
+
+<p style="margin: 0;"># 🏋️‍♀️ Monitor de Hábitos e Rotina</p>
+
+<p style="margin: 0;">Uma aplicação web para rastreamento de hábitos, planejamento de dieta, treinos, humor, medicações e muito mais! 🚀</p>
+
+
+<p style="margin: 1;">## 🔥 Funcionalidades</p>
+
+<p style="margin: 0;">- Autenticação de Usuários: Registro e login seguros com Firebase Authentication.</p>
+<p style="margin: 0;">- Rastreamento de Hábitos: Adicione, edite e monitore seus hábitos com visualização de progresso.</p>
+<p style="margin: 0;">- Planejamento de Dieta: Registre refeições e acompanhe calorias e nutrientes.</p>
+<p style="margin: 0;">- Treinos: Planeje seus exercícios e acompanhe sua evolução.</p>
+<p style="margin: 0;">- Diário: Faça anotações diárias e organize por data.</p>
+<p style="margin: 0;">- Oscilações de Humor: Registre seu humor e visualize gráficos de tendências.</p>
+<p style="margin: 0;">- Medicações: Cadastre remédios e receba lembretes.</p>
+<p style="margin: 0;">- Tarefas Pessoais: Gerencie suas tarefas diárias.</p>
+<p style="margin: 0;">- Receitas: Salve receitas organizadas por categoria e deixe avaliações.</p>
+
+
+<p style="margin: 1;">## 🛠️ Tecnologias Utilizadas</p>
+
+<p style="margin: 0;">- Frontend: HTML, CSS (TailwindCSS), JavaScript (React)</p>
+<p style="margin: 0;">- Backend: Firebase Authentication, Firestore Database</p>
+<p style="margin: 0;">- Outras: Chart.js para gráficos de humor</p>
+
+
+<p style="margin: 2;">## 🚀 Como Rodar o Projeto</p>
+
+<p style="margin: 0;">### 1️⃣ Clone o repositório:</p>
+<p style="margin: 0;">git clone https://github.com/Antuarte/Mentis.git</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/pt-br.js'></script>
-
     <script src="renderer.js"></script>
 </body>
 </html>

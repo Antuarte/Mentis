@@ -7,6 +7,15 @@ body {
   padding: 0;
 }
 
+body.dark-theme {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+
+body.dark-theme .aba-lateral {
+  background-color: #34495e;
+}
+
 h2 {
   color: #333;
   font-size: 1.5em;
@@ -115,6 +124,16 @@ input, textarea, select, button {
 
 .aba-lateral.active {
   left: 0;
+}
+
+.pagina {
+  margin-left: 20px;
+  padding: 20px;
+  transition: margin 0.3s;
+}
+
+.pagina.active {
+  margin-left: 270px;
 }
 
 /* ESTILOS HABITOS */
